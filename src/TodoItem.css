@@ -1,23 +1,86 @@
-.todo-strikethrough {
-    text-decoration: line-through;
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  background: rgb(174,238,185);
+background: radial-gradient(circle, rgba(174,238,185,1) 0%, rgba(166,148,233,1) 100%);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-  .todo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .todo span {
-    font-size: 18px;
-  }
-  
-  .todo button {
-    background: #fff;
-    border: 1px solid #999;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.todo-list {
+  background: rgba(255, 255, 255, 0.641);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+.todo-input {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(218, 212, 212);
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+.todos {
+  margin-top: 20px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgb(218, 212, 212);
+}
+
+.todo-strikethrough {
+  text-decoration: line-through;
+  color: #999;
+}
+
+
+.todo-input button {
+  margin-left: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #FC6549, #F9462E);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.todo-input button:hover {
+  background: linear-gradient(135deg, #F9462E, #D1361A);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.todo-input button:active {
+  background: linear-gradient(135deg, #D1361A, #B12414);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
