@@ -1,47 +1,61 @@
-.todo {
+.custom-checkbox-container {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  position: relative;
+  padding-left: 35px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  height: 25px;
 }
 
-.todo-checkbox {
-  display: none; /* Versteckt die Checkbox */
+.custom-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .custom-checkbox {
-  width: 20px; /* Größe der Checkbox */
-  height: 20px; /* Größe der Checkbox */
-  border: 2px solid #999; /* Randfarbe der Checkbox */
-  border-radius: 4px; /* Ecken abrunden */
-  margin-right: 10px; /* Abstand zwischen Checkbox und Text */
-  cursor: pointer; /* Cursor anzeigen, um darauf zu klicken */
-  position: relative; /* Positionierung für den inneren Kreis */
-  background-color: white; /* Hintergrundfarbe der Checkbox */
-  transition: background-color 0.2s, border-color 0.2s; /* Animation */
+  position: relative;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.custom-checkbox.checked {
-  background-color: #4caf50; /* Hintergrundfarbe wenn ausgewählt */
-  border-color: #4caf50; /* Randfarbe wenn ausgewählt */
+.custom-checkbox-container:hover input ~ .custom-checkbox {
+  background-color: #ccc;
 }
 
-.custom-checkbox::after {
-  content: '';
+.custom-checkbox-container input:checked ~ .custom-checkbox {
+  background-color: #2196F3;
+}
+
+.custom-checkbox:after {
+  content: "";
   position: absolute;
-  left: 7px; /* Position des inneren Kreises */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px; /* Breite des inneren Kreises */
-  height: 12px; /* Höhe des inneren Kreises */
-  border-radius: 50%;
-  background-color: white; /* Farbe des inneren Kreises */
-  opacity: 0; /* Standardmäßig unsichtbar */
-  transition: opacity 0.2s; /* Animation für den inneren Kreis */
+  display: none;
 }
 
-.todo-checkbox:checked + .custom-checkbox::after {
-  opacity: 1; /* Sichtbar, wenn die Checkbox ausgewählt ist */
+.custom-checkbox-container input:checked ~ .custom-checkbox:after {
+  display: block;
+}
+
+.custom-checkbox-container .custom-checkbox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 .todo-strikethrough {
