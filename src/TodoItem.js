@@ -26,7 +26,10 @@ function TodoItem({ todo, onToggleDone, onDelete, onUpdate }) {
 
   return (
     <div className="todo">
-      <input type="checkbox" checked={todo.isComplete} onChange={onToggleDone} />
+      {/*<input type="checkbox" checked={todo.isComplete} onChange={onToggleDone} />*/}
+      {/* Benutzerdefinierter Checkbox Label */}
+      <label htmlFor={`todo-${todo.id}`} className={`custom-checkbox ${todo.isComplete ? 'checked' : ''}`} />
+      
       {isEditing ? (
         <input type ="text" value={updatedText} onChange={(e) =>
           setUpdatedText(e.target.value)} />

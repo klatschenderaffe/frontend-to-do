@@ -1,23 +1,79 @@
-.todo-strikethrough {
-    text-decoration: line-through;
-  }
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
 
-  .todo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .todo span {
-    font-size: 18px;
-  }
-  
-  .todo button {
-    background: #fff;
-    border: 1px solid #999;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
+.todo-checkbox {
+  display: none; /* Versteckt die Checkbox */
+}
+
+.custom-checkbox {
+  width: 20px; /* Größe der Checkbox */
+  height: 20px; /* Größe der Checkbox */
+  border: 2px solid #999; /* Randfarbe der Checkbox */
+  border-radius: 4px; /* Ecken abrunden */
+  margin-right: 10px; /* Abstand zwischen Checkbox und Text */
+  cursor: pointer; /* Cursor anzeigen, um darauf zu klicken */
+  position: relative; /* Positionierung für den inneren Kreis */
+  background-color: white; /* Hintergrundfarbe der Checkbox */
+  transition: background-color 0.2s, border-color 0.2s; /* Animation */
+}
+
+.custom-checkbox.checked {
+  background-color: #4caf50; /* Hintergrundfarbe wenn ausgewählt */
+  border-color: #4caf50; /* Randfarbe wenn ausgewählt */
+}
+
+.custom-checkbox::after {
+  content: '';
+  position: absolute;
+  left: 7px; /* Position des inneren Kreises */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px; /* Breite des inneren Kreises */
+  height: 12px; /* Höhe des inneren Kreises */
+  border-radius: 50%;
+  background-color: white; /* Farbe des inneren Kreises */
+  opacity: 0; /* Standardmäßig unsichtbar */
+  transition: opacity 0.2s; /* Animation für den inneren Kreis */
+}
+
+.todo-checkbox:checked + .custom-checkbox::after {
+  opacity: 1; /* Sichtbar, wenn die Checkbox ausgewählt ist */
+}
+
+.todo-strikethrough {
+  text-decoration: line-through;
+}
+
+.todo span {
+  font-size: 22px;
+}
+
+.todo-btns button {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border: 1px solid #999;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.todo-btns button:hover {
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  border-color: #666;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.todo-btns button:active {
+  background: linear-gradient(135deg, #e0e0e0, #cccccc);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
