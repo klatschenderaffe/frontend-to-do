@@ -2,7 +2,7 @@
   "name": "to-do-list-pt-1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sophies-creative-hub.github.io/frontend-to-do/src/App.js",
+  "homepage": "https://sophies-creative-hub.github.io/frontend-to-do",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
