@@ -1,7 +1,7 @@
 {
   "name": "to-do-list-pt-1",
   "version": "0.1.0",
-  "homepage": "https://Sophies-Creative-hub.github.io/frontend-to-do",
+  "homepage": "https://klatschenderaffe.github.io/frontend-to-do",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
