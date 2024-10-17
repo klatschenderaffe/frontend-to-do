@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TodoItem from './TodoItem';
 import TodoInput from './TodoInput';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // const defaultTodos = [
